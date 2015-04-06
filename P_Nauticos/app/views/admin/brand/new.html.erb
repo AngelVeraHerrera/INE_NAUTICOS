@@ -1,0 +1,12 @@
+<%= form_tag :action => 'create' do %>   
+  <%= render :partial => 'form' %>  
+  &nbsp; 
+  <input type="reset" value="Limpiar" > 
+  &nbsp;
+  <input data-disable-with="Comprobando..." type="submit" value="Añadir Marca" />
+<% end %>
+
+<br/>
+<%= link_to 'Atras', :action => 'index' %>
+
+

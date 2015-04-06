@@ -1,0 +1,12 @@
+
+<%= form_tag :action => 'update', :id => @brand do %>
+  <%= render :partial => 'form' %>
+<input type="reset" value="Limpiar" > 
+  &nbsp;
+  <input data-disable-with="Actualizando..." type="submit" value="Actualizar" />
+<% end %>
+
+
+
+<%= link_to 'Ver detalles', :action => 'show', :id => @brand %> |
+<%= link_to 'Atras', :action => 'index' %>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title || 'NáuticaBarata' %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <h1 id="logo">NáuticaBarata&trade;</h1>
+    <h2 id="slogan">The Seamanship on Rails</h2>
+  
+ <div id="menu">
+    <ul>
+      <li><a href="/admin/marca">Marcas</a>&nbsp;|&nbsp;</li>
+      <li><a href="/about">Conócenos</a>&nbsp;</li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <h1><%= @page_title if @page_title %></h1>
+    <% if flash[:notice] %>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    &copy; 2015 - NáuticaBarata
+  </div>  
+</body>
+</html>

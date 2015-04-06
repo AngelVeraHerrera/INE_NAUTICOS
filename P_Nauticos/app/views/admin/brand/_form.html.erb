@@ -1,0 +1,48 @@
+<br/>
+(<FONT COLOR=red>*</FONT>) Campos obligatorios.
+<br/>
+<br/>
+<% if @brand.errors.any? %>
+  <div id="errorExplanation">
+  <h2> Los siguientes campos no pueden estar en blanco:</h2>
+    <ul>
+      <% @brand.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <p><label for="brand_name"><FONT COLOR=red>*</FONT>Nombre</label>
+  &nbsp; &nbsp; &nbsp;
+  <%= text_field 'brand', 'name' %></p>
+</div>
+
+<div class="field">
+  <p><label for="brand_cif"><FONT COLOR=red>*</FONT>CIF </label>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+  <%= text_field 'brand', 'cif' %></p>
+</div>
+
+<div class="field">
+  <p><label for="brand_logo_url">Logo (url)</label>
+  &nbsp; &nbsp; 
+  <%= text_field 'brand', 'logo_url' %></p>
+</div>
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
