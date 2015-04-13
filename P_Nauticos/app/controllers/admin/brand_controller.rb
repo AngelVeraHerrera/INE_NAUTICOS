@@ -23,7 +23,7 @@ class Admin::BrandController < ApplicationController
 
   def update
     @brand = Brand.find(params[:id])
-    if @brand.update_attributes(params[:brand])
+    if @brand.update_attributes(brand_params)
       flash[:notice] = "La marca #{@brand.name} fue actualizada."
       redirect_to :action => 'show', :id => @brand
     else
