@@ -30,6 +30,10 @@ dt {
   border: 2px solid red;
 }
 
+.brand-form {
+margin: 10px 5px 10px 10px;
+}
+
 .brand-form td{
 padding: 5px
 }
@@ -39,6 +43,13 @@ color: red;
 margin-right: 5px;
 }
 
+.brand-show td{
+padding: 5px
+}
+
+.brand-all td{
+ padding: 5px 
+}
 
 #errorExplanation {
   width: 400px;
