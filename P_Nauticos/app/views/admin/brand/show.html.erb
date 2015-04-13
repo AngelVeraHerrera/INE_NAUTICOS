@@ -1,19 +1,15 @@
-
-
 <table>
     <tr>
-    <% if !@brand.logo_url.blank? %>
+        <% if !@brand.logo_url.blank? %>
         <td>
             <img height="200" src="<%= @brand.logo_url %>"></img>
         </td>
-    <% end %>
+        <% end %>
         <td>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Nombre: </b> <%= @brand.name %><br><br><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>CIF: </b> <%= @brand.cif %>
-                </td>
-            </tr>
-        </table>
-
-<br><br>
+          <b>Nombre: </b> <%= @brand.name %><br><br><br>
+          <b>CIF: </b> <%= @brand.cif %>
+      </td>
+  </tr>
+</table>
 <%= link_to 'Editar', :action => 'edit', :id => @brand %> |
 <%= link_to 'Atras', :action => 'index' %>
