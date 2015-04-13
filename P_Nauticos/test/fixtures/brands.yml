@@ -1,15 +1,15 @@
 joel_spolsky:
   id: 1
-  name: Joel
-  cif: 10212
-  logo_url: holis
+  name: Nauticos
+  cif: 1012H12
+  logo_url: /assets/images/logo.img
 carlos_contreras:
   id: 2
-  name: Carlos
+  name: Adidas
   cif: 1213412
   logo_url: molis
 jose_sanchez:
   id: 3
-  name: jose
+  name: Marinos
   cif: 14121
   logo_url: molis  

@@ -3,7 +3,8 @@ require 'test_helper'
 class Admin::BrandControllerTest < ActionController::TestCase
   test "should create new brand" do
     get :new
-    assert_response :success    
+    assert_response :success
+    #assert Brand.new 
   end
 
   test "should create brand" do
@@ -16,26 +17,29 @@ class Admin::BrandControllerTest < ActionController::TestCase
         assert_equal 'La marca Nauticos fue añadida.', flash[:notice]
   end
 
-  # test "should get update" do
-  #   post :update, :id => 1, :brand => {:name => 'Nauticos', :cif => '10212', logo_url: 'holis'}
-  #   assert_response :redirect
-  #   #assert_redirected_to :action => 'show', :id => 1
-  #   #assert_equal 'Joseph', Author.find(1).first_name
-  # end
-  # test "should get update" do
-  #   get :update
-  #   assert_response :success
-  # end
+  test "show" do
+    get :show, :id => 1
+    assert_template 'admin/brand/show'
+    assert_equal 'Nauticos', assigns(:brand).name
+    assert_equal 1012, assigns(:brand).cif
+  end
 
-  # test "should get destroy" do
-  #   get :destroy
-  #   assert_response :success
-  # end
+  test "should update brand" do
+    post :update, :id => 1, :brand => {:name => 'Adidas', :cif => '10212', logo_url: 'holis'}
+    assert_response :redirect
+    assert_redirected_to :action => 'show', :id => 1
+    assert_equal 'Adidas', Brand.find(1).name
+  end
 
-  # test "should get show" do
-  #   get :show
-  #   assert_response :success
-  # end
+  test "test_destroy" do
+    assert_difference(Brand, :count, -1) do
+      post :destroy, :id => 1
+      assert_equal flash[:notice], 'La marca Nauticos fue eliminada.'
+      assert_response :redirect
+      assert_redirected_to :action => 'index'
+    end
+  end
+
 
   # test "should get index" do
   #   get :index
