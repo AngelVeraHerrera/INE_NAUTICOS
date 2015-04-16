@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#index'
   get 'admin/brand' => 'admin/brand#index'
+  get 'admin/product' => 'admin/product#index'
 
   get 'admin/brand/new'
   post 'admin/brand/create'
@@ -14,6 +15,15 @@ Rails.application.routes.draw do
   get 'admin/brand/show'
   get 'admin/brand/show/:id' => 'admin/brand#show'
   get 'admin/brand/index'
+
+  get 'admin/product/new'
+  get 'admin/product/create'
+  get 'admin/product/edit'
+  get 'admin/product/update'
+  get 'admin/product/destroy'
+  get 'admin/product/show'
+  get 'admin/product/index'
+  get 'admin/product/load_data'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
