@@ -25,6 +25,10 @@ en:
       brand:
         name: "Nombre"
         cif: "CIF"
+      product:
+        brand_id: "Marca"
+        name: "Nombre"
+        price: "Precio"
 
     errors:
       models:
@@ -34,6 +38,15 @@ en:
               blank: ""
             cif:
               blank: ""
+        product:
+          attributes:
+            brand_id:
+              blank: ""
+            name:
+              blank: ""
+            price:
+              blank: ""              
+
 
 
 
