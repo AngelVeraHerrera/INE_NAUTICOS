@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413172036) do
+ActiveRecord::Schema.define(version: 20150416201452) do
 
   create_table "brands", force: true do |t|
     t.integer  "cif"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150413172036) do
   end
 
   create_table "products", force: true do |t|
+    t.integer  "brand_id",    null: false
     t.string   "name"
     t.float    "price"
     t.string   "description"
@@ -29,5 +30,7 @@ ActiveRecord::Schema.define(version: 20150413172036) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["brand_id"], name: "fk_brands_products", using: :btree
 
 end

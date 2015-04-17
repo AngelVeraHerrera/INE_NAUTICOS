@@ -10,7 +10,7 @@ class Admin::ProductControllerTest < ActionController::TestCase
 test "should create product" do
   get :new
   assert_difference(Product, :count) do
-    post :create, :product => { :brands_id => 1,
+    post :create, :product => { :brand_id => 1,
                                 :name => 'Ancla', 
                                 :price => 12.1, 
                                 :description =>  'holis',

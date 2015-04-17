@@ -1,6 +1,6 @@
 producto_1:
   id: 1
-  brands_id: 1
+  brand_id: 1
   name: Ancla
   price: 12.1
   description: holis'
