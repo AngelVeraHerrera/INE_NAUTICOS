@@ -7,7 +7,7 @@ class Admin::ProductController < ApplicationController
 
   def create
     load_data
-    @product = Product.new(brand_params)
+    @product = Product.new(product_params)
     if @product.save
       flash[:notice] = "El producto #{@product.name} fue añadido."
       redirect_to :action => 'index'
@@ -18,13 +18,24 @@ class Admin::ProductController < ApplicationController
   end
 
   def edit
+    load_data
+    @product = Product.find(params[:id])
+    @page_title = 'Editar producto'
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      flash[:notice] = "El producto #{@product.name} fue actualizado."
+      redirect_to :action => 'show', :id => @product
+    else
+      @page_title = 'Editar producto'
+      render :action => 'edit'
+    end
   end
 
   def destroy
-        @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @product.destroy
     flash[:notice] = "La marca #{@product.name} fue eliminada."
     redirect_to :action => 'index'
@@ -45,7 +56,7 @@ class Admin::ProductController < ApplicationController
   end
 
   private
-  def brand_params
+  def product_params
     params.require(:product).permit(:brand_id, :name, :price, :description, :product_img)
   end
 end

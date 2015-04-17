@@ -34,10 +34,14 @@ end
   #   assert_response :success
   # end
 
-  # test "should get destroy" do
-  #   get :destroy
-  #   assert_response :success
-  # end
+test "should delete product" do
+  assert_difference(Product, :count, -1) do
+    post :destroy, :id => 1
+    assert_equal flash[:notice], 'La marca Nauticos fue eliminada.'
+    assert_response :redirect
+    assert_redirected_to :action => 'index'
+  end
+end
 
   # test "should get show" do
   #   get :show

@@ -11,7 +11,7 @@ end
 test "should create brand" do
   get :new
   assert_difference(Brand, :count) do
-    post :create, :brand => {:name => 'Nauticos', :cif => '1012', logo_url: 'holis'}
+    post :create, :brand => {:name => 'Nauticos', :cif => '1213412', logo_url: 'holis'}
     assert_response :redirect
     assert_redirected_to :action => 'index'      
   end
@@ -22,7 +22,7 @@ test "should show brand" do
   get :show, :id => 1
   assert_template 'admin/brand/show'
   assert_equal 'Nauticos', assigns(:brand).name
-  assert_equal 1012, assigns(:brand).cif
+  assert_equal 1213412, assigns(:brand).cif
   assert_tag "h1", :content => Brand.find(1).name
 end
 
@@ -45,10 +45,10 @@ end
 test "should edit brand" do
   get :edit, :id => 1
   assert_tag :tag => 'input', :attributes => { :name => 'brand[name]', :value => 'Nauticos' }
-  assert_tag :tag => 'input', :attributes => { :name => 'brand[cif]', :value => '1012' }
+  assert_tag :tag => 'input', :attributes => { :name => 'brand[cif]', :value => '1213412' }
 end
 
-test "index" do
+test "should get index" do
   get :index
   assert_response :success
   assert_tag :tag => 'table', :children => { :count => Brand.count + 1, :only => {:tag => 'tr'} }

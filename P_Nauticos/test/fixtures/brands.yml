@@ -1,15 +1,15 @@
-joel_spolsky:
+brand_nauticos:
   id: 1
   name: Nauticos
-  cif: 1012
-  logo_url: /assets/images/logo.img
-carlos_contreras:
-  id: 2
-  name: Adidas
   cif: 1213412
-  logo_url: molis
-jose_sanchez:
+  logo_url: 
+brand_peruanos:
+  id: 2
+  name: Peruanos
+  cif: 19281712
+  logo_url: 
+brand_marinos:
   id: 3
   name: Marinos
-  cif: 14121
-  logo_url: molis  
+  cif: 01928121
+  logo_url:   
