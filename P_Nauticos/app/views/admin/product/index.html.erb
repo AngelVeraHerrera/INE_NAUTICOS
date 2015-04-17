@@ -1,2 +1,11 @@
-<h1>Admin::Product#index</h1>
-<p>Find me in app/views/admin/product/index.html.erb</p>
+<table class='template-all'>
+  <tr>
+    <th>Nombre</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+  <%= render :partial => 'product', :collection => @product %>
+</table>
+
+<p><%= link_to 'Añadir nueva marca', :action => 'new' %></p>

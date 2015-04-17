@@ -30,15 +30,15 @@ dt {
   border: 2px solid red;
 }
 
-.brand-form {
+.form-template{
 margin: 10px 5px 10px 10px;
 }
 
-.brand-form td{
+.form-template td{
 padding: 5px
 }
 
-.brand-form span{
+.form-template span{
 color: red;
 margin-right: 5px;
 }
@@ -47,7 +47,7 @@ margin-right: 5px;
 padding: 5px
 }
 
-.brand-all td{
+.template-all td, th{
  padding: 5px 
 }
 
@@ -87,6 +87,9 @@ padding: 5px
   background-color: #FFCC80;
 }
 
+#menu span {
+  margin: 0px 5px 0px 5px;
+}
 #menu ul {
   padding: 2px;
   margin: 2px;

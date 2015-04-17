@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'admin/brand/index'
 
   get 'admin/product/new'
-  get 'admin/product/create'
+  post 'admin/product/create'
   get 'admin/product/edit'
   get 'admin/product/update'
   get 'admin/product/destroy'
