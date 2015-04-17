@@ -1,2 +1,20 @@
-<h1>Admin::Product#show</h1>
-<p>Find me in app/views/admin/product/show.html.erb</p>
+<table class='brand-show'>
+   <tr>
+    <td><img src="<%= @product.product_img %>"/></td>
+</tr>
+<tr>
+    <td><b>Nombre: </b> <%= @product.name %></td>
+</tr>
+<tr>
+  <td><b>Marca:</b> <%= @product.brands_id %></td>
+</tr>
+<tr>
+  <td><b>Precio:</b> <%= @product.price %></td>
+</tr>
+<tr>
+  <td><b>Descripción:</b> <%= @product.description %></td>
+</tr>
+</table>
+
+<%= link_to 'Editar', :action => 'edit', :id => @product %> |
+<%= link_to 'Atras', :action => 'index' %>
