@@ -1,0 +1,35 @@
+(<FONT COLOR=red>*</FONT>) Campos obligatorios.
+<% if @product.errors.any? %>
+<div id="errorExplanation">
+  <h2> Los siguientes campos no pueden estar en blanco:</h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<table class='form-template'>
+  <tr>
+    <td><label for="product_brand"><span>*</span>Marca</label></td>
+    <td><%= collection_select :product, :brands_id, @brands, :id, :name %></td>
+  </tr>
+  <tr>
+    <td>
+      <label for="product_name"><span>*</span>Nombre</label></td>
+      <td><%= text_field 'product', 'name' %></td>
+    </tr>
+    <tr>
+     <td><label for="product_price"><span>*</span>Precio </label></td>
+     <td><%= text_field 'product', 'price' %></td>
+   </tr>
+   <tr>
+     <td><label for="product_description"><span>*</span>Descripción </label></td>
+     <td><%= text_field 'product', 'description' %></td>
+   </tr>
+      <tr>
+     <td><label for="product_product_img"><span>*</span>Imagen </label></td>
+     <td><%= text_field 'product', 'product_img' %></td>
+   </tr>
+ </table>

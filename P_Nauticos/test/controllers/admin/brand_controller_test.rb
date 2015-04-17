@@ -18,7 +18,7 @@ test "should create brand" do
   assert_equal 'La marca Nauticos fue añadida.', flash[:notice]
 end
 
-test "should show brands" do
+test "should show brand" do
   get :show, :id => 1
   assert_template 'admin/brand/show'
   assert_equal 'Nauticos', assigns(:brand).name
@@ -42,7 +42,7 @@ test "should delete brand" do
   end
 end
 
-test "edit" do
+test "should edit brand" do
   get :edit, :id => 1
   assert_tag :tag => 'input', :attributes => { :name => 'brand[name]', :value => 'Nauticos' }
   assert_tag :tag => 'input', :attributes => { :name => 'brand[cif]', :value => '1012' }
