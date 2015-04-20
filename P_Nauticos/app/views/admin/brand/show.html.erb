@@ -1,8 +1,8 @@
 <table class='brand-show'>
    <% if !@brand.logo_url.blank? %>
    <tr>
-    <td>
-        <img src="<%= @brand.logo_url %>"/>
+    <td rowspan='3'>
+        <%= image_tag @brand.logo_url(:medium) %>
     </td>
 </tr>
 <% end %>

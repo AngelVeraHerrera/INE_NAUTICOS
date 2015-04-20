@@ -1,5 +1,5 @@
 
-<%= form_tag :action => 'update', :id => @brand do %>
+<%= form_tag "update?id=#{@brand.id}", :multipart => true  do %>
   <%= render :partial => 'form' %>
 <input type="reset" value="Limpiar" > 
   &nbsp;
