@@ -3,7 +3,7 @@ class CreateBrands < ActiveRecord::Migration
     create_table :brands do |t|
      t.integer :cif
      t.string :name
-     t.string :logo_url
+     t.attachment :logo_url
      t.timestamps
     end
   end

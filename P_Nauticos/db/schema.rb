@@ -16,7 +16,10 @@ ActiveRecord::Schema.define(version: 20150420175309) do
   create_table "brands", force: true do |t|
     t.integer  "cif"
     t.string   "name"
-    t.string   "logo_url"
+    t.string   "logo_url_file_name"
+    t.string   "logo_url_content_type"
+    t.integer  "logo_url_file_size"
+    t.datetime "logo_url_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,11 +30,14 @@ ActiveRecord::Schema.define(version: 20150420175309) do
   end
 
   create_table "products", force: true do |t|
-    t.integer  "brand_id",    null: false
+    t.integer  "brand_id",                 null: false
     t.string   "name"
     t.float    "price"
     t.string   "description"
-    t.string   "product_img"
+    t.string   "product_img_file_name"
+    t.string   "product_img_content_type"
+    t.integer  "product_img_file_size"
+    t.datetime "product_img_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
