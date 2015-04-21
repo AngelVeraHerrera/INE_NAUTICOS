@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'catalog/index'
+
+  get 'catalog/show/:id' => 'catalog#show'
+
+  get 'catalog/search'
+
+  get 'catalog/latest'
+
 #  root :to => 'catalog#index'
   root 'admin/brand#index'
 
