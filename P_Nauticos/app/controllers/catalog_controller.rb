@@ -1,6 +1,8 @@
 class CatalogController < ApplicationController
   def index
-      @products= Product.order("products.id desc").includes(:brands).paginate(:page => params[:page], :per_page => 5)
+      @products= Product.order("products.id desc")
+      .includes(:brand)
+      .paginate(:page => params[:page], :per_page => 5)
       @page_title = 'Catálogo'
   end
 
