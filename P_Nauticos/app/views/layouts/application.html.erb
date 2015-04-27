@@ -11,8 +11,9 @@
     <h1 id="logo">NáuticaBarata&trade;</h1>
     <h2 id="slogan">The Seamanship on Rails</h2>
   </div>
- <div id="menu">
+  <div id="menu">
     <ul>
+      <li><a href="/catalog">Catálogo</a><span>|</span></li>
       <li><a href="/admin/product">Productos</a><span>|</span></li>
       <li><a href="/admin/brand">Marcas</a><span>|</span></li>
       <li><a href="/about">Conócenos</a></li>
@@ -22,7 +23,7 @@
   <div id="content">
     <h1><%= @page_title if @page_title %></h1>
     <% if flash[:notice] %>
-      <div id="notice"><%= flash[:notice] %></div>
+    <div id="notice"><%= flash[:notice] %></div>
     <% end %>
     <%= yield %>
   </div>

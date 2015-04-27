@@ -1,7 +1,7 @@
 <table class='brand-show'>
    <tr>
        <td rowspan='5'>
-        <%= image_tag @product.product_img(:medium) %>
+  <%= image_tag @product.product_img(:medium) %>
     </td>
 </tr>
 <tr>
@@ -11,7 +11,7 @@
   <td><b>Marca:</b> <%= @product.brand.name %></td>
 </tr>
 <tr>
-  <td><b>Precio:</b> <%= @product.price %></td>
+  <td><b>Precio:</b> <%= @product.price %>€</td>
 </tr>
 <tr>
   <td><b>Descripción:</b> <%= @product.description %></td>

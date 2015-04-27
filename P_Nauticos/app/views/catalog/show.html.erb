@@ -1,15 +1,10 @@
-
-<% if @product.product_img.exists? then %>
-  <dd><%= image_tag @product.product_img.url %></dd>
-<% else %>
-  <p>No cover image available.</p>
-<% end %>
+  <dd><%= image_tag @product.product_img(:medium) %></dd>
 <dl>
-  <dt>Price</dt>
-  <dd><%= sprintf("%0.2f", @product.price) %></dd>
-  <dt>Pubisher</dt>
+  <dt>Precio</dt>
+  <dd><%= sprintf("%0.2f", @product.price) %>€</dd>
+  <dt>Marca</dt>
   <dd><%= @product.brand.name %></dd>
-  <dt>Blurb</dt>
+  <dt>Descripción</dt>
   <%= RedCloth.new(@product.description).to_html.html_safe if @product.description %>
 </dl>
 

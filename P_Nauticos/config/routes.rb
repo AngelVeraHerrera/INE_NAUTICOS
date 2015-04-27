@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
   
   get 'catalog/index'
-
   get 'catalog/show/:id' => 'catalog#show'
-
   get 'catalog/search'
-
   get 'catalog/latest'
 
-#  root :to => 'catalog#index'
+
   root 'admin/brand#index'
 
   get 'about' => 'about#index'
+
   get 'admin/brand' => 'admin/brand#index'
   get 'admin/product' => 'admin/product#index'
+  get 'catalog' => 'catalog#index'
 
   get 'admin/brand/new'
   post 'admin/brand/create'
