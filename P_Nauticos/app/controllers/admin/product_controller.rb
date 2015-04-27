@@ -37,7 +37,7 @@ class Admin::ProductController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    flash[:notice] = "La marca #{@product.name} fue eliminada."
+    flash[:notice] = "El producto #{@product.name} fue eliminado."
     redirect_to :action => 'index'
   end
 
