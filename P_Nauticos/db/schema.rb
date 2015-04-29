@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420175309) do
+ActiveRecord::Schema.define(version: 20150427164152) do
 
   create_table "brands", force: true do |t|
     t.integer  "cif"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150420175309) do
     t.integer  "brand_id",                 null: false
     t.string   "name"
     t.float    "price"
-    t.string   "description"
+    t.text     "description"
     t.string   "product_img_file_name"
     t.string   "product_img_content_type"
     t.integer  "product_img_file_size"
