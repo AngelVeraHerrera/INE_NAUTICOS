@@ -1,1 +1,1 @@
-rails generate controller 'admin/product' new create edit update destroy show index load_data
+Hello world!
