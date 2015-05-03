@@ -14,7 +14,7 @@ test "should create product" do
                                 :name => 'Ancla', 
                                 :price => 12.1, 
                                 :description =>  'holis',
-                                :product_img =>  'holis'}
+                                :product_img =>  'ancla_small.png'}
     assert_response :redirect
     assert_redirected_to :action => 'index'      
   end

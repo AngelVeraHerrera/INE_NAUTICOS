@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'admin/product/edit'
   post 'admin/product/update'
   post 'admin/product/destroy'
-  get 'admin/product/show'
+  get 'admin/product/show/:id' => 'admin/product#show'
   get 'admin/product/index'
   get 'admin/product/load_data'
 

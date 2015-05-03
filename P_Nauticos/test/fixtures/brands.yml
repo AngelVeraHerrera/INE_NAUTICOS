@@ -2,7 +2,7 @@ brand_nauticos:
   id: 1
   name: Nauticos
   cif: 1213412
-  logo_url_file_name: 
+  logo_url_file_name: 'nauticos_brand.jpg'
 brand_peruanos:
   id: 2
   name: Peruanos
