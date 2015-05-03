@@ -11,7 +11,9 @@ end
 test "should create brand" do
   get :new
   assert_difference(Brand, :count) do
-    post :create, :brand => {:name => 'Nauticos', :cif => '1213412', logo_url: 'holis'}
+    post :create, :brand => {:name => 'Nauticos', 
+      :cif => '1213412', 
+      :logo_url_file_name => 'holis'}
     assert_response :redirect
     assert_redirected_to :action => 'index'      
   end
@@ -27,7 +29,9 @@ test "should show brand" do
 end
 
 test "should update brand" do
-  post :update, :id => 1, :brand => {:name => 'Adidas', :cif => '1012', logo_url: 'holis'}
+  post :update, :id => 1, :brand => {:name => 'Adidas', 
+    :cif => '1012', 
+    :logo_url_file_name => 'adidas_brand.jpg'}
   assert_response :redirect
   assert_redirected_to :action => 'show', :id => 1
   assert_equal 'Adidas', Brand.find(1).name

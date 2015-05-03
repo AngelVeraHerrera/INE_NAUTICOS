@@ -3,5 +3,5 @@ product_ancla:
   brand_id: 1
   name: Ancla
   price: 12.1
-  description: holis'
-  product_img: 'holis'
+  description: 'Best anchor in the world'
+  product_img_file_name: 'sweet_anchor.jpg'

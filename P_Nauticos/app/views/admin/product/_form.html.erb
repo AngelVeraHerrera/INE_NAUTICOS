@@ -28,8 +28,14 @@
      <td><label for="product_description">Descripción </label></td>
      <td><%= text_area 'product', 'description' %></td>
    </tr>
-      <tr>
+  <tr>
+  <% if @product.product_img.exists? then %>
+    <%= image_tag @product.product_img.url (:medium) %>
+  <% else %>
+    <p> No existe imagen asociada. Por favor añada una. </p>
+  <% end %>
      <td><label for="product_product_img">Imagen </label></td>
      <td><%= file_field 'product', :product_img %></td>
-   </tr>
+ </tr>
  </table>
+

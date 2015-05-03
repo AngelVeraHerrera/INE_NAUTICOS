@@ -5,7 +5,6 @@ class Admin::BrandController < ApplicationController
   end
 
   def create
-    #ActionController::Parameters.permit_all_parameters = true
     @brand = Brand.new(brand_params)
     if @brand.save
       flash[:notice] = "La marca #{@brand.name} fue añadida."

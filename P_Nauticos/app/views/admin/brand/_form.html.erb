@@ -21,6 +21,11 @@
    <td><%= text_field 'brand', 'cif' %></td>
  </tr>
  <tr>
+  <% if @brand.logo_url.exists? then %>
+    <%= image_tag @brand.logo_url.url (:medium) %>
+  <% else %>
+    <p> No existe imagen asociada. Por favor añada una. </p>
+  <% end %>
    <td><label for="brand_logo_url">Logo (url)</label></td>
    <td><%= file_field 'brand', :logo_url %></td>
  </tr>
