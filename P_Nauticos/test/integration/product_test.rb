@@ -3,7 +3,7 @@ require 'test_helper'
 class ProductTest < ActionDispatch::IntegrationTest
   test "product_aministration" do
     carlos = new_session_as(:carlos)
-    new_product = carlos.add_book :product => {
+    new_product = carlos.add_product :product => {
       :brand_id => 1,
       :name => 'Ancla', 
       :price => 12.1, 
@@ -29,7 +29,7 @@ class ProductTest < ActionDispatch::IntegrationTest
 
   private
   module ProductTestDSL
-     def add_book(parameters)
+     def add_product(parameters)
       brand = Brand.first
       get '/admin/product/new'
       assert_response :success

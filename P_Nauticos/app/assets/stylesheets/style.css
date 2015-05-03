@@ -93,13 +93,13 @@ padding: 5px
 }
 
 #menu span {
-  margin: 0px 5px 0px 5px;
+  margin: 0px 10px 0px 10px;
 }
 #menu ul {
   padding: 2px;
   margin: 2px;
   list-style: none;
-  border-top: 5px solid #B36B00;
+  border-top: 5px solid #3498db;
   border-bottom: 1px solid grey;
 }
 

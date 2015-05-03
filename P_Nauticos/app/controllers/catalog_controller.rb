@@ -12,8 +12,11 @@ class CatalogController < ApplicationController
   end
 
   def search
+    #method pending
   end
 
   def latest
+    @products = Product.latest 5
+    @page_title = 'Últimos Productos'
   end
 end

@@ -7,4 +7,7 @@ class Product < ActiveRecord::Base
 	validates_attachment :product_img,
 	:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
 
+	def self.latest(num)
+		all.order("products.id desc").includes(:brand).limit(num)
+	end
 end
