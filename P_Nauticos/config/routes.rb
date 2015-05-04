@@ -1,36 +1,38 @@
 Rails.application.routes.draw do
-  
-  get 'catalog/index'
-  get 'catalog/show/:id' => 'catalog#show'
-  get 'catalog/search'
-  get 'catalog/latest'
 
+root 'catalog#index'
 
-  root 'admin/brand#index'
+ #Rutas del Catálogo
+ get 'catalog' => 'catalog#index'
+ get 'catalog/index'
+ get 'catalog/show/:id' => 'catalog#show'
+ get 'catalog/search'
+ get 'catalog/latest'
 
-  get 'about' => 'about#index'
+ #Rutas de Conócenos
+ get 'about' => 'about#index'
 
-  get 'admin/brand' => 'admin/brand#index'
-  get 'admin/product' => 'admin/product#index'
-  get 'catalog' => 'catalog#index'
+ #Rutas de las Marcas
+ get 'admin/brand' => 'admin/brand#index' 
+ get 'admin/brand/new'
+ post 'admin/brand/create'
+ get 'admin/brand/edit'
+ post 'admin/brand/update'
+ post 'admin/brand/destroy'
+ get 'admin/brand/show'
+ get 'admin/brand/show/:id' => 'admin/brand#show'
+ get 'admin/brand/index'
 
-  get 'admin/brand/new'
-  post 'admin/brand/create'
-  get 'admin/brand/edit'
-  post 'admin/brand/update'
-  post 'admin/brand/destroy'
-  get 'admin/brand/show'
-  get 'admin/brand/show/:id' => 'admin/brand#show'
-  get 'admin/brand/index'
-
-  get 'admin/product/new'
-  post 'admin/product/create'
-  get 'admin/product/edit'
-  post 'admin/product/update'
-  post 'admin/product/destroy'
-  get 'admin/product/show/:id' => 'admin/product#show'
-  get 'admin/product/index'
-  get 'admin/product/load_data'
+ #Rutas del Producto
+ get 'admin/product' => 'admin/product#index'
+ get 'admin/product/new'
+ post 'admin/product/create'
+ get 'admin/product/edit'
+ post 'admin/product/update'
+ post 'admin/product/destroy'
+ get 'admin/product/show/:id' => 'admin/product#show'
+ get 'admin/product/index'
+ get 'admin/product/load_data'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
