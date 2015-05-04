@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CatalogTest < ActionDispatch::IntegrationTest
+class CatalogBrowseTest < ActionDispatch::IntegrationTest
 	test "catalog_browsing" do
 		carlos = new_session_as :carlos
 		carlos.index

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProductTest < ActionDispatch::IntegrationTest
+class ProductAdministrationTest < ActionDispatch::IntegrationTest
   test "product_aministration" do
     carlos = new_session_as(:carlos)
     new_product = carlos.add_product :product => {
@@ -21,7 +21,6 @@ class ProductTest < ActionDispatch::IntegrationTest
       :description =>  'Excelente ancla grande',
       :product_img =>  ''
     }
-
     angel = new_session_as(:angel)
     angel.delete_product new_product
 

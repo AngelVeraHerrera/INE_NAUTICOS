@@ -14,7 +14,7 @@ test "should create product" do
                                 :name => 'Ancla', 
                                 :price => 12.1, 
                                 :description =>  'holis',
-                                :product_img =>  'ancla_small.png'}
+                                :product_img_file_name =>  'ancla_small.png'}
     assert_response :redirect
     assert_redirected_to :action => 'index'      
   end
@@ -37,7 +37,7 @@ end
 test "should delete product" do
   assert_difference(Product, :count, -1) do
     post :destroy, :id => 1
-    assert_equal flash[:notice], 'La marca Nauticos fue eliminada.'
+    assert_equal flash[:notice], 'El producto Ancla fue eliminado.'
     assert_response :redirect
     assert_redirected_to :action => 'index'
   end
