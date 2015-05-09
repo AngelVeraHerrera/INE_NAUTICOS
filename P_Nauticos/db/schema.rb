@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427164152) do
+ActiveRecord::Schema.define(version: 20150509114733) do
 
   create_table "brands", force: true do |t|
     t.integer  "cif"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 20150427164152) do
     t.string   "logo_url_content_type"
     t.integer  "logo_url_file_size"
     t.datetime "logo_url_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.float    "price"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

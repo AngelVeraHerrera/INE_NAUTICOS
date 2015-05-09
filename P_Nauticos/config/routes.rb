@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  #Rutas del Carrito
+ get 'cart/add'
+  post 'cart/add'
+  get 'cart/remove'
+  post 'cart/remove'
+  get 'cart/clear'
+  post 'cart/clear'
+
 root 'catalog#index'
 
  #Rutas del Catálogo

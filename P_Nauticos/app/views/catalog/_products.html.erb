@@ -2,7 +2,7 @@
   <% for product in @products %>
     <dt>
       <%= link_to product.name, :action => 'show', :id => product %>
- 
+       <%= link_to '+', :controller => 'cart', :action => 'add', :id => product %>
     </dt>
  
 <!--       <dd><%= product.brand.name %></dd>

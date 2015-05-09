@@ -123,8 +123,7 @@ padding: 5px
   color: white;
 }
 
-#header img{
-  width: 30%;
+#header{
 }
 
 #content {
@@ -173,13 +172,12 @@ padding: 5px
 }
 
 #cart_notice {
-  border: 2px solid #FFC930;
-  background: #FFD459;
+  border: 2px solid #58A986;
+  background: #B2FFD3;
   padding: 3px;
   position: absolute;
   top: 0;
   left: 10px;
- width: 85%;
 }
 
 #loginlogout {
@@ -220,3 +218,19 @@ padding: 5px
 #checkout fieldset input:focus {
   background-color: #CCCCCC;
 }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

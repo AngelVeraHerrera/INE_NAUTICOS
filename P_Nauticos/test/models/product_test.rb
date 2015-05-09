@@ -7,7 +7,7 @@ class ProductTest < ActiveSupport::TestCase
 			:name => 'Ancla', 
 			:price => 12.1, 
 			:description =>  'holis',
-			:product_img =>  'holis')
+			:product_img =>  '')
 		assert product.save
 	end
 
@@ -27,7 +27,7 @@ class ProductTest < ActiveSupport::TestCase
 			:name => 'Ancla', 
 			:price => 12.1, 
 			:description =>  'holis',
-			:product_img =>  'holis')
+			:product_img =>  '')
 
 		brand.products << product
 		brand.reload
