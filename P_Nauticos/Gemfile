@@ -32,6 +32,7 @@ gem 'paperclip', '4.1.1'
 
 gem 'RedCloth', '~> 4.2.9'
 
+gem 'authlogic', '3.4.2'
 
 
 # Use ActiveModel has_secure_password
@@ -45,4 +46,3 @@ gem 'RedCloth', '~> 4.2.9'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

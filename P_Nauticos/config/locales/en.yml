@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   activerecord:
     attributes:
@@ -29,28 +8,63 @@ en:
         brand_id: "Marca"
         name: "Nombre"
         price: "Precio"
-
-    errors:
-      models:
-        brand:
-          attributes:
-            name:
-              blank: ""
-            cif:
-              blank: ""
-        product:
-          attributes:
-            brand_id:
-              blank: ""
-            name:
-              blank: ""
-            price:
-              blank: ""              
-
-
-
-
-
-
-
-
+      user:
+        name: "Nombre"
+        login: "Usuario"
+        email: "E-mail"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+  authlogic:
+    error_messages:
+      login_blank: 'no puede estar en blanco'
+      login_not_found: 'no encontrado'
+      login_invalid: 'debe contener solamente letras, números, espacios y .-_@'
+      consecutive_failed_logins_limit_exceeded: 'Límite de ingresos fallidos consecutivos exedido, la cuenta se ha deshabilitado'
+      email_invalid: 'no es una dirección de correo válida'
+      password_blank: 'no puede estar en blanco'
+      password_invalid: 'no es válida'
+      not_active: 'Su cuenta no está activa'
+      not_confirmed: 'Su cuenta no está confirmada'
+      not_approved: 'Su cuenta no está aprobada'
+      no_authentication_details: 'Debe proporcionar datos para la autenticación'
+    models:
+      user_session: 'Sesión'
+    attributes:
+      user_session:
+        login: 'Usuario'
+        password: 'Contraseña'
+  errors:
+      format: "%{attribute} %{message}"
+      messages:
+        accepted: debe ser aceptado
+        blank: no puede estar en blanco
+        present: debe estar en blanco
+        confirmation: no coincide
+        empty: no puede estar vacío
+        equal_to: debe ser igual a %{count}
+        even: debe ser un número par
+        exclusion: está reservado
+        greater_than: debe ser mayor que %{count}
+        greater_than_or_equal_to: debe ser mayor o igual que %{count}
+        inclusion: no está incluido en la lista
+        invalid: es inválido
+        less_than: debe ser menor que %{count}
+        less_than_or_equal_to: debe ser menor o igual que %{count}
+        not_a_number: no es un número
+        not_an_integer: debe ser un entero
+        odd: debe ser un número non
+        record_invalid: 'La validación falló: %{errors}'
+        restrict_dependent_destroy:
+          one: El registro no puede ser eliminado pues existe un %{record} dependiente
+          many: El registro no puede ser eliminado pues existen %{record} dependientes
+        taken: ya ha sido tomado
+        too_long:
+          one: es demasiado largo (máximo 1 caracter)
+          other: es demasiado largo (máximo %{count} caracteres)
+        too_short:
+          one: es demasiado corto (mínimo 1 caracter)
+          other: es demasiado corto (mínimo %{count} caracteres)
+        wrong_length:
+          one: longitud errónea (debe ser de 1 caracter)
+          other: longitud errónea (debe ser de %{count} caracteres)
+        other_than: debe ser diferente a %{count}

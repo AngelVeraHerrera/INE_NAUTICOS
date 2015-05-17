@@ -1,4 +1,4 @@
-class Admin::BrandController < ApplicationController
+class Admin::BrandController < Admin::AuthenticatedController
   def new
     @brand = Brand.new
     @page_title = 'Añadir marca'
@@ -54,5 +54,3 @@ class Admin::BrandController < ApplicationController
     end
 
 end
-
-

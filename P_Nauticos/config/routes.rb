@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'user_sessions/new'
+  get 'user_sessions/create' # for showing failed login screen after restarting web server
+  post 'user_sessions/create'
+  get 'user_sessions/destroy'
+
+  get 'user/new'
+  post 'user/create'
+  get 'user/show'
+  get 'user/show/:id' => 'user#show'
+  get 'user/edit'
+  post 'user/update'
+
   #Rutas del Carrito
  get 'cart/add'
   post 'cart/add'
@@ -21,7 +33,7 @@ root 'catalog#index'
  get 'about' => 'about#index'
 
  #Rutas de las Marcas
- get 'admin/brand' => 'admin/brand#index' 
+ get 'admin/brand' => 'admin/brand#index'
  get 'admin/brand/new'
  post 'admin/brand/create'
  get 'admin/brand/edit'
