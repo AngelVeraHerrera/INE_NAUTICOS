@@ -16,7 +16,7 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save # the new user has been logged in automatically
-      flash[:notice] = "La cuenta #{@user.name} ha sido creada correctamente. Por favor inicia sesión."
+      flash[:notice] = "La cuenta #{@user.name} ha sido creada. Por favor inicia sesión."
       redirect_to :action => 'show'
     else
       @page_title = 'Crear nueva cuenta'
@@ -26,7 +26,7 @@ class UserController < ApplicationController
 
   def edit
     @user = current_user
-    @page_title = 'Modificar Cuenta'
+    @page_title = 'Modificar cuenta'
   end
 
   def update
@@ -46,7 +46,7 @@ class UserController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :login, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :login, :email, :password, :password_confirmation)
+  end
 end
