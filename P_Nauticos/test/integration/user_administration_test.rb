@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserBrowsingTest < ActionDispatch::IntegrationTest
 
-  test "user_account" do
+  test "should get user account" do
     carlos = new_session_as(:carlos)
     user_account = carlos.creates_user_account(:user => { :name => 'Carlos Contreras', :login => 'carlosc',
                                                :email => 'carlos@nauticos.com', :password => 'oregano',
@@ -62,9 +62,9 @@ class UserBrowsingTest < ActionDispatch::IntegrationTest
       assert_template 'user/show'
       user_name = parameters[:user][:name]
       assert_tag :tag => 'h1', :content => user_name
-      assert_equal flash[:notice], "Account #{user_name} was succesfully updated."
+      assert_equal flash[:notice], "La cuenta #{user_name} ha sido actualizada."
       assert_tag :tag => 'div', :attributes => { :id => 'notice' },
-                                :content => "Account #{user_name} was succesfully updated."
+                                :content => "La cuenta #{user_name} ha sido actualizada."
       assert_tag :tag => 'dt', :content => 'Nombre'
       assert_tag :tag => 'dd', :content => user_name
     end
