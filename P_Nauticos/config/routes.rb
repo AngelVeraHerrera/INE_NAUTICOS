@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'checkout/index'
+
+  get 'checkout/place_order'
+
+  get 'checkout/thank_you'
+
   get 'user_sessions/new'
   get 'user_sessions/create' # for showing failed login screen after restarting web server
   post 'user_sessions/create'
