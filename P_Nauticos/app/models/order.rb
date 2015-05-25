@@ -19,12 +19,12 @@ class Order < ActiveRecord::Base
   validates_length_of :ship_to_country_code, :in => 2..255
 
   validates_length_of :customer_ip, :in => 7..15
-  validates_inclusion_of :status, :in => %w(abierta procesada cerrada fallida)
+  validates_inclusion_of :status, :in => %w(abierto procesado cerrado fallido)
 
   validates_inclusion_of :card_type, :in => ['Visa', 'MasterCard', 'American Express', 'Discover'], :on => :create
   validates_length_of :card_number, :in => 13..19, :on => :create
   validates_inclusion_of :card_expiration_month, :in => %w(1 2 3 4 5 6 7 8 9 10 11 12), :on => :create
-  validates_inclusion_of :card_expiration_year, :in => %w(2013 2014 2015 2016 2017 2018), :on => :create
+  validates_inclusion_of :card_expiration_year, :in => %w(2015 2016 2017 2018 2019 2020), :on => :create
   validates_length_of :card_verification_value, :in => 3..4, :on => :create
 
   def total
@@ -35,15 +35,15 @@ class Order < ActiveRecord::Base
 
     def process
       begin
-        raise 'Una orden cerrada no puede ser procesada otra vez.' if self.cerrada?
+        raise 'Un pedido cerrado no puede ser procesado otra vez.' if self.closed?
         active_merchant_payment
       rescue => e
-        logger.error("Orden #{id} debido a la excepción: #{e}.")
+        logger.error("Pedido #{id} no procesado debido a la excepción: #{e}.")
         self.error_message = "Excepción no controlada: #{e}"
-        self.status = 'fallida'
+        self.status = 'fallido'
       end
       save!
-      self.procesada?
+      self.processed?
     end
 
     def active_merchant_payment
@@ -51,7 +51,7 @@ class Order < ActiveRecord::Base
       ActiveMerchant::Billing::AuthorizeNetGateway.default_currency = 'EUR'
       ActiveMerchant::Billing::AuthorizeNetGateway.wiredump_device = STDERR
       ActiveMerchant::Billing::AuthorizeNetGateway.wiredump_device.sync = true
-      self.status = 'fallida' # order status by default
+      self.status = 'fallido' # order status by default
 
       # the card verification value is also known as CVV2, CVC2, or CID
       creditcard = ActiveMerchant::Billing::CreditCard.new(
@@ -99,7 +99,7 @@ class Order < ActiveRecord::Base
         response = gateway.purchase((self.total * 100), creditcard, details)
 
         if response.success?
-          self.status = 'procesada'
+          self.status = 'procesado'
         else
           p response
           self.error_message = response.message
@@ -109,20 +109,20 @@ class Order < ActiveRecord::Base
       end
     end
 
-    def procesada?
-      self.status == 'procesada'
+    def processed?
+      self.status == 'procesado'
     end
 
-    def fallida?
-      self.status == 'fallida'
+    def failed?
+      self.status == 'fallido'
     end
 
-    def cerrada?
-      self.status == 'cerrada'
+    def closed?
+      self.status == 'cerrado'
     end
 
     def close
-      self.status = 'cerrada'
+      self.status = 'cerrado'
       save!
     end
 

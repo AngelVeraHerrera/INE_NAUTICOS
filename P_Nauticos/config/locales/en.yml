@@ -29,7 +29,7 @@ en:
       login_blank: 'no puede estar en blanco'
       login_not_found: 'no encontrado'
       login_invalid: 'debe contener solamente letras, números, espacios y .-_@'
-      consecutive_fallida_logins_limit_exceeded: 'Límite de ingresos fallidos consecutivos exedido, la cuenta se ha deshabilitado'
+      consecutive_fallido_logins_limit_exceeded: 'Límite de ingresos fallidos consecutivos exedido, la cuenta se ha deshabilitado'
       email_invalid: 'no es una dirección de correo válida'
       password_blank: 'no puede estar en blanco'
       password_invalid: 'no es válida'

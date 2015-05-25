@@ -13,7 +13,7 @@ class CreateUsers < ActiveRecord::Migration
 
       # magic fields (all optional, see Authlogic::Session::MagicColumns)
       t.integer :login_count, :null => false, :default => 0
-      t.integer :fallida_login_count, :null => false, :default => 0
+      t.integer :fallido_login_count, :null => false, :default => 0
       t.datetime :last_request_at
       t.datetime :current_login_at
       t.datetime :last_login_at

@@ -12,7 +12,7 @@ class UserAuthenticationTest < ActionDispatch::IntegrationTest
     george.logs_in_succesfully("carina", "salado")
   end
 
-  test "should get fallida login" do
+  test "should get fallido login" do
     harry = new_session_as(:harry)
     harry.tries_to_go_to_admin
     harry.fails_login("harry", "potter")

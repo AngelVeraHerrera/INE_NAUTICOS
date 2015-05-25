@@ -23,18 +23,18 @@ class CheckoutController < ApplicationController
     @order = Order.new(order_params)
     @order.ship_to_country_code = @order.ship_to_country_code.upcase
     @order.customer_ip = request.remote_ip
-    @order.status = 'abierta'
+    @order.status = 'abierto'
     @page_title = 'Checkout'
     populate_order
 
     if @order.save
       if @order.process
-        flash[:notice] = 'Tu orden ha sido enviada y será procesada inmediatamente.'
+        flash[:notice] = 'Tu pedido ha sido enviado y será procesado inmediatamente.'
         session[:order_id] = @order.id
         @cart.cart_items.destroy_all # empty shopping cart
         redirect_to :action => 'thank_you'
       else
-        flash[:notice] = "Error al mandar la orden '#{@order.error_message}'."
+        flash[:notice] = "Error al enviar pedido '#{@order.error_message}'."
         render :action => 'index'
       end
     else

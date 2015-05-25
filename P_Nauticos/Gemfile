@@ -42,6 +42,9 @@ gem 'activemerchant', '1.43.1'
 
 gem 'eu_central_bank', '0.3.8'
 
+#for debugging purposes
+gem 'awesome_print', '~> 1.6.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

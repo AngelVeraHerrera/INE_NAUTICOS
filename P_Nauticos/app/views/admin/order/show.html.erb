@@ -1,4 +1,4 @@
-<h2>Contact Information</h2>
+<h2>Información de Contacto</h2>
 <dl>
   <dt>E-mail</dt>
   <dd><%= @order.email %></dd>
@@ -6,7 +6,7 @@
   <dd><%= @order.phone_number %></dd>
 </dl>
 
-<h2>Shipping Address</h2>
+<h2>Información de Envío</h2>
 <dl>
   <dt>First name</dt>
   <dd><%= @order.ship_to_first_name %></dd>
@@ -34,13 +34,13 @@
 <dl>
   <dt>Status</dt>
   <dd><%= @order.status[0].capitalize + @order.status[1..@order.status.length-1] %></dd>
-  <% if @order.fallida? %>
+  <% if @order.failed? %>
     <dt>Error</dt>
     <dd><%= @order.error_message %></dd>
   <% end %>
 </dl>
 
-<% if !@order.cerrada? %> <p></p> <% end %>
+<% if !@order.closed? %> <p></p> <% end %>
 <%= button_to 'Cerrar oden', {:action => 'close', :id => @order},
-    data: { confirm: "Seguro que deseas cerrar la orden número: #{@order.id}?" } if @order.procesada? %>
+    data: { confirm: "Seguro que deseas cerrar la orden número: #{@order.id}?" } if @order.processed? %>
 <%= render :partial => 'navigation' %>

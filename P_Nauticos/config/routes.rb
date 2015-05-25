@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'checkout/thank_you'
 
   get 'user_sessions/new'
-  get 'user_sessions/create' # for showing fallida login screen after restarting web server
+  get 'user_sessions/create' # for showing fallido login screen after restarting web server
   post 'user_sessions/create'
   get 'user_sessions/destroy'
 

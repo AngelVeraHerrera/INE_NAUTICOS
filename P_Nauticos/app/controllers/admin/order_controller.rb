@@ -8,13 +8,13 @@ class Admin::OrderController < Admin::AuthenticatedController
       conditions = "status = '#{@status}'"
     end
     @orders = Order.where(conditions).paginate(:page => params[:page], :per_page => 10)
-    @page_title = @status.blank? ? "Lista de ordenes #{@status}" : "Lista de ordenes #{@status}s"
+    @page_title = @status.blank? ? "Lista de pedidos #{@status}" : "Lista de pedidos #{@status}s"
   end
 
   def close
     order = Order.find(params[:id])
     order.close
-    flash[:notice] = "Order ##{order.id} has been cerrada."
+    flash[:notice] = "Order ##{order.id} has been cerrado."
     redirect_to :action => 'index'
   end
 

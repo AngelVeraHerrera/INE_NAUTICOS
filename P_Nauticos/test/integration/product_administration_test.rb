@@ -1,12 +1,13 @@
 require 'test_helper'
 
 class ProductAdministrationTest < ActionDispatch::IntegrationTest
+  
   test "product_aministration" do
     carlos = new_session_as(:carlos)
     new_product = carlos.add_product :product => {
       :brand_id => 1,
-      :name => 'Ancla', 
-      :price => 12.1, 
+      :name => 'Ancla',
+      :price => 12.1,
       :description =>  'Ancla en perfectas condiciones',
       :product_img =>  ''
     }
@@ -16,8 +17,8 @@ class ProductAdministrationTest < ActionDispatch::IntegrationTest
 
     carlos.edit_product new_product, :product => {
       :brand_id => 2,
-      :name => 'Ancla Grande', 
-      :price => 120.1, 
+      :name => 'Ancla Grande',
+      :price => 120.1,
       :description =>  'Excelente ancla grande',
       :product_img =>  ''
     }
