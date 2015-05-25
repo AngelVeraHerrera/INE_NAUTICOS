@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525080810) do
+ActiveRecord::Schema.define(version: 20150525080811) do
 
   create_table "brands", force: true do |t|
     t.integer  "cif"

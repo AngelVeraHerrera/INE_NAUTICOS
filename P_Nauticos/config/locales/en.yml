@@ -14,12 +14,22 @@ en:
         email: "E-mail"
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
+      order:
+        email: 'E-mail'
+        phone_number: 'Telefóno'
+        ship_to_first_name: 'Nombre'
+        ship_to_last_name: 'Apellido'
+        ship_to_address: 'Dirección'
+        ship_to_postal_code: 'Código postal'
+        ship_to_city: 'Dirección'
+        card_number: 'Número de Tarjeta'
+        card_verification_value: 'CVV/CVC'
   authlogic:
     error_messages:
       login_blank: 'no puede estar en blanco'
       login_not_found: 'no encontrado'
       login_invalid: 'debe contener solamente letras, números, espacios y .-_@'
-      consecutive_failed_logins_limit_exceeded: 'Límite de ingresos fallidos consecutivos exedido, la cuenta se ha deshabilitado'
+      consecutive_fallida_logins_limit_exceeded: 'Límite de ingresos fallidos consecutivos exedido, la cuenta se ha deshabilitado'
       email_invalid: 'no es una dirección de correo válida'
       password_blank: 'no puede estar en blanco'
       password_invalid: 'no es válida'

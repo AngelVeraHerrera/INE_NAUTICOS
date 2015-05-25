@@ -1,7 +1,7 @@
 (<FONT COLOR=red>*</FONT>) Campos obligatorios.
 <% if @product.errors.any? %>
 <div id="errorExplanation">
-  <h2>Revise que los siguientes campos sean válidos (<%=pluralize(@product.errors.count, "error") %>):</h2>
+  <h2>Revisa que los siguientes campos sean válidos (<%=pluralize(@product.errors.count, "error") %>):</h2>
   <ul>
     <% @product.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>

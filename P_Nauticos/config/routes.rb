@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
 
+
+  get 'admin/order' => 'admin/order#index'
+  get 'admin/order/index' => 'admin/order#index'
+  get 'admin/order/index/:id' => 'admin/order#index'
+  get 'admin/order/show/:id' => 'admin/order#show'
+  post 'admin/order/close'
+
+  get 'checkout' => 'checkout#index'
   get 'checkout/index'
-
-  get 'checkout/place_order'
-
+  post 'checkout/submit_order'
   get 'checkout/thank_you'
 
   get 'user_sessions/new'
-  get 'user_sessions/create' # for showing failed login screen after restarting web server
+  get 'user_sessions/create' # for showing fallida login screen after restarting web server
   post 'user_sessions/create'
   get 'user_sessions/destroy'
 
