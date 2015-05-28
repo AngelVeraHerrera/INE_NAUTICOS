@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'catalog/search'
+
   get 'admin/order' => 'admin/order#index'
   get 'admin/order/index' => 'admin/order#index'
   get 'admin/order/index/:id' => 'admin/order#index'
@@ -38,7 +40,7 @@ root 'catalog#index'
  get 'catalog' => 'catalog#index'
  get 'catalog/index'
  get 'catalog/show/:id' => 'catalog#show'
- get 'catalog/search'
+ post 'catalog/search'
  get 'catalog/latest'
 
  #Rutas de Conócenos

@@ -1,3 +1,5 @@
+require "awesome_print"
+
 class CatalogController < ApplicationController
   before_filter :initialize_cart
   def index
@@ -13,7 +15,8 @@ class CatalogController < ApplicationController
   end
 
   def search
-    #method pending
+    @products = Product.search(params[:search])
+ap @products
   end
 
   def latest

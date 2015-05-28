@@ -10,4 +10,10 @@ class Product < ActiveRecord::Base
 	def self.latest(num)
 		all.order("products.id desc").includes(:brand).limit(num)
 	end
+
+	def self.search(search)
+		if search
+			where("name LIKE ?", "%#{search}%")
+		end
+	end
 end

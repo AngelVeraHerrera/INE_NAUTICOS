@@ -1,2 +1,9 @@
-<h1>Catalog#search</h1>
-<p>Find me in app/views/catalog/search.html.erb</p>
+<%= form_tag :action => 'search' do%>
+<%= text_field_tag :search, params[:search], placeholder: "Buscar por producto" %>
+<%= submit_tag 'Buscar' %>
+<% end %>
+
+<% if @products.present?%>
+<p><%= pluralize(@products.size, "resultado encontrado", "resultados encontrados")%></p>
+<%= render :partial => 'products' %>
+<% end %>

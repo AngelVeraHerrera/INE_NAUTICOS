@@ -21,7 +21,7 @@ en:
         ship_to_last_name: 'Apellido'
         ship_to_address: 'Dirección'
         ship_to_postal_code: 'Código postal'
-        ship_to_city: 'Dirección'
+        ship_to_city: 'Ciudad'
         card_number: 'Número de Tarjeta'
         card_verification_value: 'CVV/CVC'
   authlogic:
