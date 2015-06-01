@@ -3,7 +3,8 @@
 <%= submit_tag 'Buscar' %>
 <% end %>
 
-<% if @products.present?%>
+
+<% unless @products.nil?%>
 <p><%= pluralize(@products.size, "resultado encontrado", "resultados encontrados")%></p>
 <%= render :partial => 'products' %>
 <% end %>
