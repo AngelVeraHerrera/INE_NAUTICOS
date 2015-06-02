@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
 
+  get 'password_resets/new'
+  get 'password_resets/edit/:id' => 'password_resets#edit'
+  post 'password_resets/update/:id' => 'password_resets#update'
+  get 'password_resets/create'
+  post 'password_resets/create'
+
+
   get 'catalog/search'
+
+
 
   get 'admin/order' => 'admin/order#index'
   get 'admin/order/index' => 'admin/order#index'

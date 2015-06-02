@@ -8,7 +8,14 @@ class User < ActiveRecord::Base
     a.crypto_provider = Authlogic::CryptoProviders::Sha512
   end
 
+
+
   validates_presence_of :name, :login, :email, :password, :password_confirmation
   validates_length_of :name, :in => 3..225
   validates_uniqueness_of :name, :login, :email
+
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    Notifier.password_reset_instructions(self).deliver
+  end
 end

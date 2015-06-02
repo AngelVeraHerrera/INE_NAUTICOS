@@ -1,0 +1,9 @@
+<p>
+  Por favor introduce tu nueva contraseña
+  y presiona el botón "Actualizar Contraseña"
+</p>
+
+<%= form_tag :action => 'update' do %>
+<%= password_field_tag :password %>
+<%= submit_tag "Actualizar Contraseña" %>
+<% end %>
