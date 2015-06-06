@@ -16,7 +16,7 @@ class CatalogController < ApplicationController
 
   def search
     @products = Product.search(params[:search])
-ap @products
+    @page_title = 'Buscar Productos'
   end
 
   def latest

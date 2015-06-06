@@ -1,14 +1,19 @@
 <% if @orders == [] %>
-<h2><%= "No existen pedidos con el estatus '#{@status}'." %></h2>
+  <% if @status.blank? %>
+    <h2><%= "Aún no se ha realizado ningún pedido." %></h2>
+  <% else %>
+    <h2><%= "No existen pedidos con el estatus '#{@status}'." %></h2>
+  <% end %>
 <% else %>
-<table>
+<table class='template-all'>
   <tr>
     <th>ID</th>
-    <th>Status</th>
-    <th>Total amount</th>
-    <th>Size</th>
-    <th>Created at</th>
-    <th>Updated at</th>
+    <th>Estado</th>
+    <th>Total</th>
+    <th>Tamaño</th>
+    <th>Creado en</th>
+    <th>Modificado en</th>
+    <th></th>
     <th></th>
   </tr>
   <% for order in @orders %>
@@ -25,12 +30,12 @@
       data: { confirm: "¿Estás seguro de que quieres eliminar la orden: #{order.id}?" } %>
     </td>
   </tr>
-  <% end %>
+<% end %>
 </table>
 
 <% if @orders.total_pages > 1 %>
 <br/>
-<%= 'View page:' %>
+<%= 'Ver Página:' %>
 <% end %>
 
 <%= will_paginate @orders, :page_links => true, :link_separator => ' ', :container => false,

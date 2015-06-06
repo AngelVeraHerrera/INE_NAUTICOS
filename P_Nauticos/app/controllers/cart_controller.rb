@@ -6,7 +6,7 @@ class CartController < ApplicationController
 		respond_to do |format|
 			format.js {
 				@item = @cart.add params[:id]
-				flash[:cart_notice] = "Añadido <em>#{@item.product.name}</em>."
+				flash.now[:cart_notice] = "Añadido <em>#{@item.product.name}</em>."
 				render :controller => 'cart',	:action => 'add_with_ajax'
 			}
 			format.html{
@@ -27,7 +27,7 @@ class CartController < ApplicationController
 		respond_to do |format|
 			format.js {
 				@item = @cart.remove params[:id]
-				flash[:cart_notice] = "Eliminado 1 <em>#{@item.product.name}</em>."
+				flash.now[:cart_notice] = "Eliminado 1 <em>#{@item.product.name}</em>."
 				render :controller => 'cart',	:action => 'remove_with_ajax'
 			}
 			format.html {
@@ -47,7 +47,7 @@ class CartController < ApplicationController
 		respond_to do |format|
 			format.js{
 				@cart.cart_items.destroy_all
-				flash[:cart_notice] = "Tu carrito ha sido vaciado."
+				flash.now[:cart_notice] = "Tu carrito ha sido vaciado."
 				render :controller => 'cart',	:action => 'clear_with_ajax'
 			}
 			format.html{
