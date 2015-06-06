@@ -32,7 +32,6 @@ class Admin::OrderController < Admin::AuthenticatedController
     else
       flash[:notice] = "No es posible eliminar el pedido #{@order.id} porque aún no se ha cerrado."
       redirect_to :action => 'index'
-
     end
 
   end

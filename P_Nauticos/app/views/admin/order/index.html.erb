@@ -19,7 +19,7 @@
     <td align="center"><%= order.products.size %></td>
     <td align="center"><%= order.created_at.strftime("%d-%m-%Y %I:%M") %></td>
     <td align="center"><%= order.updated_at.strftime("%d-%m-%Y %I:%M") %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => order %></td>
+    <td><%= link_to 'Mostrar', :action => 'show', :id => order %></td>
     <td>
       <%= button_to 'Eliminar', { :action => 'destroy', :id => order },
       data: { confirm: "¿Estás seguro de que quieres eliminar la orden: #{order.id}?" } %>
