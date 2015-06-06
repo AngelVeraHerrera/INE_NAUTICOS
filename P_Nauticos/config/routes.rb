@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
+  root 'catalog#index'
 
+
+  #Rutas para recuperar contraseña
   get 'password_resets/new'
   get 'password_resets/edit/:id' => 'password_resets#edit'
   post 'password_resets/update/:id' => 'password_resets#update'
   get 'password_resets/create'
   post 'password_resets/create'
 
-
-  get 'catalog/search'
-
-
-
+  #Rutas de la administración de ordenes
   get 'admin/order' => 'admin/order#index'
   get 'admin/order/index' => 'admin/order#index'
   get 'admin/order/index/:id' => 'admin/order#index'
@@ -20,16 +19,19 @@ Rails.application.routes.draw do
   post 'admin/order/destroy'
   post 'admin/order/close'
 
+  #Rutas del Checkout
   get 'checkout' => 'checkout#index'
   get 'checkout/index'
   post 'checkout/submit_order'
   get 'checkout/thank_you'
 
+  #Rutas de la sesión de usuario
   get 'user_sessions/new'
-  get 'user_sessions/create' # for showing fallido login screen after restarting web server
+  get 'user_sessions/create'
   post 'user_sessions/create'
   get 'user_sessions/destroy'
 
+  #Rutas de Usuario
   get 'user/new'
   post 'user/create'
   get 'user/show'
@@ -38,46 +40,47 @@ Rails.application.routes.draw do
   post 'user/update'
 
   #Rutas del Carrito
- get 'cart/add'
+  get 'cart/add'
   post 'cart/add'
   get 'cart/remove'
   post 'cart/remove'
   get 'cart/clear'
   post 'cart/clear'
 
-root 'catalog#index'
 
- #Rutas del Catálogo
- get 'catalog' => 'catalog#index'
- get 'catalog/index'
- get 'catalog/show/:id' => 'catalog#show'
- post 'catalog/search'
- get 'catalog/latest'
+  #Rutas del Catálogo
+  get 'catalog' => 'catalog#index'
+  get 'catalog/index'
+  get 'catalog/show/:id' => 'catalog#show'
+  post 'catalog/search'
+  get 'catalog/latest'
+  get 'catalog/rss'
 
- #Rutas de Conócenos
- get 'about' => 'about#index'
 
- #Rutas de las Marcas
- get 'admin/brand' => 'admin/brand#index'
- get 'admin/brand/new'
- post 'admin/brand/create'
- get 'admin/brand/edit'
- post 'admin/brand/update'
- post 'admin/brand/destroy'
- get 'admin/brand/show'
- get 'admin/brand/show/:id' => 'admin/brand#show'
- get 'admin/brand/index'
+  #Rutas de Conócenos
+  get 'about' => 'about#index'
 
- #Rutas del Producto
- get 'admin/product' => 'admin/product#index'
- get 'admin/product/new'
- post 'admin/product/create'
- get 'admin/product/edit'
- post 'admin/product/update'
- post 'admin/product/destroy'
- get 'admin/product/show/:id' => 'admin/product#show'
- get 'admin/product/index'
- get 'admin/product/load_data'
+  #Rutas de las Marcas
+  get 'admin/brand' => 'admin/brand#index'
+  get 'admin/brand/new'
+  post 'admin/brand/create'
+  get 'admin/brand/edit'
+  post 'admin/brand/update'
+  post 'admin/brand/destroy'
+  get 'admin/brand/show'
+  get 'admin/brand/show/:id' => 'admin/brand#show'
+  get 'admin/brand/index'
+
+  #Rutas del Producto
+  get 'admin/product' => 'admin/product#index'
+  get 'admin/product/new'
+  post 'admin/product/create'
+  get 'admin/product/edit'
+  post 'admin/product/update'
+  post 'admin/product/destroy'
+  get 'admin/product/show/:id' => 'admin/product#show'
+  get 'admin/product/index'
+  get 'admin/product/load_data'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

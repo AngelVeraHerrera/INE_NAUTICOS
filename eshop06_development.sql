@@ -33,7 +33,7 @@ CREATE TABLE `brands` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `cart_items` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `cart_items` (
 
 LOCK TABLES `cart_items` WRITE;
 /*!40000 ALTER TABLE `cart_items` DISABLE KEYS */;
-INSERT INTO `cart_items` VALUES (9,10,2,100,1,'2015-05-09 15:04:00','2015-05-09 15:04:00'),(10,6,2,12,1,'2015-05-09 15:04:06','2015-05-09 15:04:06'),(11,2,2,312,1,'2015-05-09 15:04:11','2015-05-09 15:04:11'),(12,10,8,100,1,'2015-05-17 16:40:19','2015-05-17 16:40:19'),(26,1,12,18,1,'2015-05-25 17:22:43','2015-05-25 17:22:43'),(29,6,16,12,1,'2015-05-27 11:44:56','2015-05-27 11:44:56');
+INSERT INTO `cart_items` VALUES (9,10,2,100,1,'2015-05-09 15:04:00','2015-05-09 15:04:00'),(10,6,2,12,1,'2015-05-09 15:04:06','2015-05-09 15:04:06'),(11,2,2,312,1,'2015-05-09 15:04:11','2015-05-09 15:04:11'),(12,10,8,100,1,'2015-05-17 16:40:19','2015-05-17 16:40:19'),(26,1,12,18,1,'2015-05-25 17:22:43','2015-05-25 17:22:43'),(29,6,16,12,1,'2015-05-27 11:44:56','2015-05-27 11:44:56'),(77,12,26,159,2,'2015-06-06 15:50:00','2015-06-06 15:50:01');
 /*!40000 ALTER TABLE `cart_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +87,7 @@ CREATE TABLE `carts` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (1,'2015-05-09 12:00:14','2015-05-09 12:00:14'),(2,'2015-05-09 12:00:15','2015-05-09 12:00:15'),(3,'2015-05-09 15:23:07','2015-05-09 15:23:07'),(4,'2015-05-09 15:23:08','2015-05-09 15:23:08'),(5,'2015-05-11 16:08:46','2015-05-11 16:08:46'),(6,'2015-05-11 16:08:47','2015-05-11 16:08:47'),(7,'2015-05-17 15:07:27','2015-05-17 15:07:27'),(8,'2015-05-17 15:07:30','2015-05-17 15:07:30'),(9,'2015-05-25 07:56:33','2015-05-25 07:56:33'),(10,'2015-05-25 07:56:34','2015-05-25 07:56:34'),(11,'2015-05-25 12:14:26','2015-05-25 12:14:26'),(12,'2015-05-25 12:14:27','2015-05-25 12:14:27'),(13,'2015-05-26 06:57:38','2015-05-26 06:57:38'),(14,'2015-05-26 06:57:39','2015-05-26 06:57:39'),(15,'2015-05-27 11:40:05','2015-05-27 11:40:05'),(16,'2015-05-27 11:40:06','2015-05-27 11:40:06'),(17,'2015-05-29 21:11:59','2015-05-29 21:11:59'),(18,'2015-05-29 21:12:01','2015-05-29 21:12:01'),(19,'2015-06-01 09:01:06','2015-06-01 09:01:06'),(20,'2015-06-01 09:01:08','2015-06-01 09:01:08');
+INSERT INTO `carts` VALUES (1,'2015-05-09 12:00:14','2015-05-09 12:00:14'),(2,'2015-05-09 12:00:15','2015-05-09 12:00:15'),(3,'2015-05-09 15:23:07','2015-05-09 15:23:07'),(4,'2015-05-09 15:23:08','2015-05-09 15:23:08'),(5,'2015-05-11 16:08:46','2015-05-11 16:08:46'),(6,'2015-05-11 16:08:47','2015-05-11 16:08:47'),(7,'2015-05-17 15:07:27','2015-05-17 15:07:27'),(8,'2015-05-17 15:07:30','2015-05-17 15:07:30'),(9,'2015-05-25 07:56:33','2015-05-25 07:56:33'),(10,'2015-05-25 07:56:34','2015-05-25 07:56:34'),(11,'2015-05-25 12:14:26','2015-05-25 12:14:26'),(12,'2015-05-25 12:14:27','2015-05-25 12:14:27'),(13,'2015-05-26 06:57:38','2015-05-26 06:57:38'),(14,'2015-05-26 06:57:39','2015-05-26 06:57:39'),(15,'2015-05-27 11:40:05','2015-05-27 11:40:05'),(16,'2015-05-27 11:40:06','2015-05-27 11:40:06'),(17,'2015-05-29 21:11:59','2015-05-29 21:11:59'),(18,'2015-05-29 21:12:01','2015-05-29 21:12:01'),(19,'2015-06-01 09:01:06','2015-06-01 09:01:06'),(20,'2015-06-01 09:01:08','2015-06-01 09:01:08'),(21,'2015-06-01 20:22:10','2015-06-01 20:22:10'),(22,'2015-06-01 20:22:11','2015-06-01 20:22:11'),(23,'2015-06-02 08:20:58','2015-06-02 08:20:58'),(24,'2015-06-02 08:21:00','2015-06-02 08:21:00'),(25,'2015-06-06 10:49:35','2015-06-06 10:49:35'),(26,'2015-06-06 15:49:08','2015-06-06 15:49:08'),(27,'2015-06-06 15:50:30','2015-06-06 15:50:30');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +142,7 @@ CREATE TABLE `order_items` (
   PRIMARY KEY (`id`),
   KEY `fk_order_items_orders` (`order_id`),
   CONSTRAINT `fk_order_items_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +151,7 @@ CREATE TABLE `order_items` (
 
 LOCK TABLES `order_items` WRITE;
 /*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
-INSERT INTO `order_items` VALUES (3,10,3,100,1,'2015-05-25 16:16:11','2015-05-25 16:16:11'),(4,10,4,100,1,'2015-05-25 17:02:15','2015-05-25 17:02:15'),(5,10,5,100,1,'2015-05-25 17:02:59','2015-05-25 17:02:59'),(6,11,6,144,1,'2015-05-27 11:44:09','2015-05-27 11:44:09'),(7,10,6,100,1,'2015-05-27 11:44:09','2015-05-27 11:44:09');
+INSERT INTO `order_items` VALUES (12,12,9,159,3,'2015-06-06 15:58:23','2015-06-06 15:58:23'),(13,12,10,159,3,'2015-06-06 15:59:31','2015-06-06 15:59:31'),(14,12,11,159,1,'2015-06-06 16:00:51','2015-06-06 16:00:51'),(15,11,11,144,1,'2015-06-06 16:00:51','2015-06-06 16:00:51'),(16,10,11,100,1,'2015-06-06 16:00:51','2015-06-06 16:00:51'),(17,9,11,121,1,'2015-06-06 16:00:51','2015-06-06 16:00:51'),(18,12,12,159,1,'2015-06-06 16:01:31','2015-06-06 16:01:31'),(19,11,12,144,1,'2015-06-06 16:01:31','2015-06-06 16:01:31'),(20,10,12,100,1,'2015-06-06 16:01:31','2015-06-06 16:01:31');
 /*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +178,7 @@ CREATE TABLE `orders` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +187,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (3,'carlos.darth@gmail.com','645482111','Carlos','Contreras','Pedro de Matheu no. 7','Puerto Real','11510','ES','127.0.0.1','cerrado',NULL,'2015-05-25 16:16:11','2015-05-27 11:55:06'),(4,'carlos.darth@gmail.com','645482666','Carlos','Contreras','Pedro de Matheu no. 7','Puerto Real','11510','ES','127.0.0.1','fallido','Excepción no controlada: undefined method `cerrado?\' for #<Order:0x0000000536b410>','2015-05-25 17:02:15','2015-05-25 17:02:15'),(5,'carlos.darth@gmail.com','645482666','Carlos','Contreras','Pedro de Matheu no. 7','Puerto Real','11510','ES','127.0.0.1','cerrado',NULL,'2015-05-25 17:02:59','2015-05-27 12:11:06'),(6,'carlos.darth@gmail.com','645482444','Carlos','Contreras','Pedro de Matheu no. 7','Puerto Real','11510','ES','127.0.0.1','procesado',NULL,'2015-05-27 11:44:09','2015-05-27 11:44:17');
+INSERT INTO `orders` VALUES (9,'carlos@correo.com','6345125123','Ariel','Isaac','Calle Falsa ','Cadiz','11219','ES','127.0.0.1','procesado',NULL,'2015-06-06 15:58:23','2015-06-06 15:58:27'),(10,'carlos@correo.com','6345125123','Ariel','Isaac','Calle Falsa ','Cadiz','11219','ES','127.0.0.1','procesado',NULL,'2015-06-06 15:59:31','2015-06-06 15:59:33'),(11,'carlos@correo.com','6345125123','Ariel','Isaac','Calle Falsa ','Cadiz','11219','ES','127.0.0.1','procesado',NULL,'2015-06-06 16:00:51','2015-06-06 16:00:52'),(12,'carlos@correo.com','6345125123','Ariel','Isaac','Calle Falsa ','Cadiz','11219','ES','127.0.0.1','procesado',NULL,'2015-06-06 16:01:31','2015-06-06 16:01:32');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +213,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `fk_brands_products` (`brand_id`),
   CONSTRAINT `fk_brands_products` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +222,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Chaleco',18,'Ayuda la flotabilidad para deportes náuticos\r\n\r\n30-50 kg TALLA S\r\nFlotador delantero monobloque, flotador dorsal en 2 partes.\r\nVisibilidad Colores muy visibles.\r\nAsa de tejido cobre el cuello para colgar el chaleco.\r\nRegulable con hebilla de plástico','40046.jpg','image/jpeg',20240,'2015-04-27 15:26:04','2015-04-27 15:26:04','2015-04-27 15:26:04'),(2,2,'Fun Yak Clam Azul',312,'Caracteristicas Tecnicas:\r\n- Construccion de capa simple.\r\n- 2 personas o 150 Kg.\r\n- Peso barco vacio: 18 Kg.\r\n- Longitud: 1,99 m.\r\n- Anchura: 1,10 m.\r\n- Hueco: 0,30 m.','FunYakClam-RecicleauAzul-1.jpg','image/jpeg',21144,'2015-04-27 15:29:34','2015-04-27 15:29:35','2015-04-27 16:23:09'),(3,3,'Jibionera',9,'Preciosas jibioneras.','jibionera-yo-zuri-bb-diam-s-z-774-77440.jpg','image/jpeg',50343,'2015-04-27 15:32:23','2015-04-27 15:32:24','2015-04-27 15:32:24'),(6,1,'Ancla',12,'1','logo-csi.png','image/png',45876,'2015-05-03 18:57:37','2015-04-27 16:32:17','2015-05-03 18:57:37'),(9,1,'Producto Falso',121,'',NULL,NULL,NULL,NULL,'2015-05-03 21:38:01','2015-05-03 21:38:01'),(10,3,'Hilo de Pescar',100,'Muy bueno',NULL,NULL,NULL,NULL,'2015-05-03 23:21:39','2015-05-03 23:21:39'),(11,1,'Ancla 2',144,'Muy buena',NULL,NULL,NULL,NULL,'2015-05-26 08:57:43','2015-05-26 08:57:43');
+INSERT INTO `products` VALUES (1,1,'Chaleco',18,'Ayuda la flotabilidad para deportes náuticos\r\n\r\n30-50 kg TALLA S\r\nFlotador delantero monobloque, flotador dorsal en 2 partes.\r\nVisibilidad Colores muy visibles.\r\nAsa de tejido cobre el cuello para colgar el chaleco.\r\nRegulable con hebilla de plástico','40046.jpg','image/jpeg',20240,'2015-04-27 15:26:04','2015-04-27 15:26:04','2015-04-27 15:26:04'),(2,2,'Fun Yak Clam Azul',312,'Caracteristicas Tecnicas:\r\n- Construccion de capa simple.\r\n- 2 personas o 150 Kg.\r\n- Peso barco vacio: 18 Kg.\r\n- Longitud: 1,99 m.\r\n- Anchura: 1,10 m.\r\n- Hueco: 0,30 m.','FunYakClam-RecicleauAzul-1.jpg','image/jpeg',21144,'2015-04-27 15:29:34','2015-04-27 15:29:35','2015-04-27 16:23:09'),(3,3,'Jibionera',9,'Preciosas jibioneras.','jibionera-yo-zuri-bb-diam-s-z-774-77440.jpg','image/jpeg',50343,'2015-04-27 15:32:23','2015-04-27 15:32:24','2015-04-27 15:32:24'),(6,1,'Ancla',12,'1','logo-csi.png','image/png',45876,'2015-05-03 18:57:37','2015-04-27 16:32:17','2015-05-03 18:57:37'),(9,1,'Producto Falso',121,'',NULL,NULL,NULL,NULL,'2015-05-03 21:38:01','2015-05-03 21:38:01'),(10,3,'Hilo de Pescar',100,'Muy bueno',NULL,NULL,NULL,NULL,'2015-05-03 23:21:39','2015-05-03 23:21:39'),(11,1,'Ancla 2',144,'Muy buena',NULL,NULL,NULL,NULL,'2015-05-26 08:57:43','2015-05-26 08:57:43'),(12,1,'Producto Falso II',159,'El mejor producto falso disponile en la localidad, no existe otro mejor.',NULL,NULL,NULL,NULL,'2015-06-06 10:50:28','2015-06-06 10:50:28');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -284,7 +284,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin','carlos.darth@gmail.com','e0e4750cd62e4fad7d51bc4c16238bfac6c9670fb8f27612bdd3dea6546da6b282c2f84640dc3c09eabaf37e3d10d7eae306c93ad5db50f35b8d39628d77aa44','QV4kN0lG7NqnILc5QkH','4f3af9204f7cd7387dfbe3dde21084e8ac1f964728f01d5f2468daaa93547e5fe5688be610254b7cbab5e225aeebf29d4ccb6dd0c2a8f0030c482ba44e5de08d','ltQ0hmRwIGP43NslIxl',26,1,'2015-06-01 13:26:24','2015-06-01 13:26:19','2015-06-01 13:23:46','127.0.0.1','127.0.0.1','2015-05-18 18:06:36','2015-06-01 13:44:15');
+INSERT INTO `users` VALUES (1,'admin','admin','carlos.darth@gmail.com','f9d90a44984ad56a057a8129173a1b715a89c5dff8afc3c36aa8225d3e03005ccca6d17f2d3caf2832efd7be09fdb19824d9a01623dbf419619edf2a29ba4333','09yBH7FMdtMODsRzFOBY','5788d693a7c5bc588681b773332661623675c0423a55a2f8f60c1bf188e521ec9f523154453a19bb2cc77ac0fd0a18207a05cc55bcdcfb6607c55341f57bc967','eLjGOYtXni1OuMThA1',36,0,'2015-06-06 16:13:43','2015-06-06 16:07:13','2015-06-06 15:58:38','127.0.0.1','127.0.0.1','2015-05-18 18:06:36','2015-06-06 16:13:43');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -297,4 +297,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-01 21:52:36
+-- Dump completed on 2015-06-06 20:34:41

@@ -23,4 +23,10 @@ class CatalogController < ApplicationController
     @products = Product.latest 5
     @page_title = 'Últimos Productos'
   end
+
+  def rss
+    latest
+    render :template => 'catalog/rss.rss.builder', :layout => false
+  end
+
 end
