@@ -6,20 +6,21 @@
 <p>
   <strong>
     <% unless controller.controller_name == 'checkout' %>
-  <%= link_to 'Tramitar Pedido', :controller => 'checkout' %>
-<% end %>
+    <%= link_to 'Tramitar Pedido', :controller => 'checkout' %>
+    <% end %>
   </strong>
 </p>
 <ul>
   <% for item in @cart.cart_items %>
-    <li id="cart_item_<%= item.product.id %>">
-      <%= render :partial => 'cart/item', :object => item %>
-    </li>
+  <li id="cart_item_<%= item.product.id %>">
+    <%= render :partial => 'cart/item', :object => item %>
+  </li>
   <% end %>
 </ul>
 <p id='cart_total'><strong>Total: <%= sprintf "%0.2f €", @cart.total %></strong></p>
 <% unless @cart.cart_items.empty? %>
-  <p id='clear_cart_link'>
-  <b><%= link_to 'Vaciar el carrito', :controller => 'cart', :action => 'clear' %></b>
-  </p>
+<p id='clear_cart_link'>
+  <b><%= link_to 'Vaciar el carrito', :controller => 'cart', :action => 'clear',
+  :remote => true %></b>
+</p>
 <% end %>

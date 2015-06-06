@@ -1,6 +1,6 @@
 class Notifier < ActionMailer::Base
 
-  default from: 'carlos.darth@gmail.com'
+  default from: 'nauticabarata@gmail.com'
   def password_reset_instructions(user)
     @user = user
     @edit_password_reset_url = url_for(:controller => 'password_resets',
