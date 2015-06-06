@@ -33,7 +33,7 @@ ap @user
       flash[:notice] = "Enhorabuena, tu contraseña ha sido actualizada!"
       redirect_to :controller => 'user', :action => :show
     else
-      flash[:notice] = "Ocurrió un error al momento de actualizar tus datos. Porfavor intenta de nuevo más tarde"
+      flash[:notice] = "Ocurrió un error al momento de actualizar tus datos. Por favor intenta de nuevo más tarde"
       render :action => :edit
     end
   end
@@ -42,7 +42,7 @@ ap @user
   def load_user_using_perishable_token
     @user = User.find_using_perishable_token(params[:id])
     unless @user
-      flash[:notice]  = "Lo sentimos, no pudimos encontrar tu cuenta. Porfavor intenta de nuevo más tarde"
+      flash[:notice]  = "Lo sentimos, no pudimos encontrar tu cuenta. Por favor intenta de nuevo más tarde"
       redirect_to root_url
     end
   end

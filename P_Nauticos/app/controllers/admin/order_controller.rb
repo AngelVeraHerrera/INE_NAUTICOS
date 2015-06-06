@@ -22,4 +22,18 @@ class Admin::OrderController < Admin::AuthenticatedController
     @order = Order.find(params[:id])
     @page_title = "Mostrando pedido ##{@order.id}"
   end
+
+  def destroy
+    @order = Order.find(params[:id])
+    if @order.status == 'cerrado' ||  @order.status == 'fallido'
+      @order.destroy
+      flash[:notice] = "El pedido #{@order.id} fue eliminado."
+      redirect_to :action => 'index'
+    else
+      flash[:notice] = "No es posible eliminar el pedido #{@order.id} porque aún no se ha cerrado."
+      redirect_to :action => 'index'
+
+    end
+
+  end
 end

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'admin/order/index' => 'admin/order#index'
   get 'admin/order/index/:id' => 'admin/order#index'
   get 'admin/order/show/:id' => 'admin/order#show'
+  get 'admin/order/destroy'
+  post 'admin/order/destroy'
   post 'admin/order/close'
 
   get 'checkout' => 'checkout#index'
