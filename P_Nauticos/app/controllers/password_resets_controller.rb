@@ -25,15 +25,12 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user.password = params[:password]
-    @user.password_confirmation = params[:password]
-
-ap @user
+    @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
       flash[:notice] = "Enhorabuena, tu contraseña ha sido actualizada!"
       redirect_to :controller => 'user', :action => :show
     else
-      flash[:notice] = "Ocurrió un error al momento de actualizar tus datos. Por favor intenta de nuevo más tarde"
       render :action => :edit
     end
   end

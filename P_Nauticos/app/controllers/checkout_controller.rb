@@ -15,7 +15,7 @@ class CheckoutController < ApplicationController
   end
 
   def thank_you
-    @page_title = 'Thank you.'
+    @page_title = 'Muchas Gracias!'
   end
 
   def submit_order
