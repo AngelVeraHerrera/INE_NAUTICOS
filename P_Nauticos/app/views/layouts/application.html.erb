@@ -17,7 +17,7 @@
 
  <% if current_user %>
   <p id="loginlogout">
-    Logeado como: <%= current_user.login %>
+    Logeado como: <b><%= current_user.login %></b>
     (<%= link_to "Editar cuenta", :controller => '/user', :action => :show %>)
     <br/>
     (<%= link_to "Cerrar sesión", :controller => '/user_sessions', :action => :destroy %>)
